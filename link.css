@@ -1,0 +1,55 @@
+/* Define the container animation for continuous loop */
+@keyframes slideRightToLeft {
+  0% {
+    transform: translateX(100%); /* Start from the right */
+  }
+  100% {
+    transform: translateX(-100%); /* End on the left side */
+  }
+}
+
+/* Apply the animation to the wrapper (the whole container of links) */
+.swiper-wrapper {
+  display: flex;
+  animation: slideRightToLeft 100s linear infinite; /* Infinite sliding */
+}
+
+/* Ensure each image has equal size to align smoothly */
+.swiper-slide {
+  width: 490px; /* Size of each image container */
+  margin-right: 30px; /* Space between images */
+}
+
+/* Apply to the image inside the swiper */
+.swiper-slide img {
+  width: 100%; /* Full width of the container */
+  height: auto;
+}
+
+/* Button animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animated-button {
+  animation: fadeIn 0.5s ease-in-out;
+  position: absolute;
+  top: 75%;
+  cursor: pointer;
+  font-size: 24px;
+  color: black;
+  z-index: 1;
+}
+
+.swiper-button-prev {
+  left: 40%;
+}
+
+.swiper-button-next {
+  left: 60%;
+}
